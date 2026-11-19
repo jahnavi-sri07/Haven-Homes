@@ -1,0 +1,564 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haven Homes | A Little World of Everything</title>
+    <meta name="description" content="Discover fashion, electronics, beauty, home essentials and more at Haven Homes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =====================================
+     PROFILE CREATION SCREEN
+===================================== -->
+
+<section id="profile-screen" class="profile-screen">
+    <div class="profile-welcome">
+        <p class="brand-small">HAVEN HOMES</p>
+        <div class="welcome-decoration">✦</div>
+
+        <h1>Your little world<br>of everything.</h1>
+
+        <p class="welcome-description">
+            Create your profile and step into a world of thoughtful finds,
+            everyday essentials and lovely discoveries.
+        </p>
+
+        <form id="profile-form" class="profile-form">
+
+            <label for="profile-name">Your name</label>
+            <input type="text" id="profile-name"
+                placeholder="Enter your name" maxlength="40" required>
+
+            <label for="profile-age">Your age</label>
+            <input type="number" id="profile-age"
+                placeholder="Enter your age" min="13" max="120" required>
+
+            <label for="profile-gender">Gender</label>
+            <select id="profile-gender" required>
+                <option value="">Select gender</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Other">Other</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+
+            <label for="profile-language">Preferred language</label>
+            <select id="profile-language" required>
+                <option value="">Select language</option>
+                <option value="English">English</option>
+                <option value="Telugu">Telugu</option>
+                <option value="Hindi">Hindi</option>
+                <option value="Tamil">Tamil</option>
+                <option value="Kannada">Kannada</option>
+                <option value="Malayalam">Malayalam</option>
+            </select>
+
+            <button type="submit" class="primary-btn full-btn">
+                ENTER HAVEN HOMES →
+            </button>
+        </form>
+
+        <p class="welcome-note">
+            A little world of everything.
+        </p>
+    </div>
+
+    <div class="profile-visual">
+        <img
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200"
+            alt="Warm and minimal living room">
+        <div class="visual-caption">
+            <span>DISCOVER YOUR EVERYDAY FAVOURITES</span>
+            <h2>Find a little something<br>to love.</h2>
+        </div>
+    </div>
+</section>
+
+
+<!-- =====================================
+     MAIN STORE
+===================================== -->
+
+<div id="store" class="hidden">
+
+    <!-- HEADER -->
+
+    <header class="main-header">
+
+        <a href="#" class="brand" onclick="filterCategory('All'); return false;">
+            <span class="brand-name">HAVEN HOMES</span>
+            <span class="brand-tagline">A little world of everything.</span>
+        </a>
+
+        <nav class="main-navigation">
+            <button onclick="filterCategory('All')">All</button>
+            <button onclick="filterCategory('Fashion')">Fashion</button>
+            <button onclick="filterCategory('Electronics')">Electronics</button>
+            <button onclick="filterCategory('Beauty')">Beauty</button>
+            <button onclick="filterCategory('Home')">Home</button>
+            <button onclick="filterCategory('Sports')">Sports</button>
+            <button onclick="filterCategory('Books')">Books</button>
+            <button onclick="filterCategory('Accessories')">Accessories</button>
+        </nav>
+
+        <div class="header-actions">
+
+            <button class="header-coins" onclick="showPage('rewards')">
+                <span>✦</span>
+                <span id="home-coins">0</span>
+                <span>Coins</span>
+            </button>
+
+            <button class="header-icon" onclick="showPage('wishlist')" title="Wishlist">
+                ♡
+            </button>
+
+            <button class="header-icon cart-header" onclick="showPage('cart')" title="Shopping bag">
+                ♧
+                <span id="cart-count" class="cart-count">0</span>
+            </button>
+
+            <button class="header-icon" onclick="showPage('profile')" title="Profile">
+                ♙
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN HOME PAGE -->
+
+    <main id="home-page" class="page">
+
+        <!-- HERO SECTION -->
+
+        <section class="hero-section">
+
+            <div class="hero-content">
+                <p class="eyebrow">WELCOME TO YOUR HAPPY PLACE</p>
+
+                <h1>Find things<br>that feel like <em>you.</em></h1>
+
+                <p>
+                    From everyday essentials to little luxuries,
+                    discover products that make life more lovely.
+                </p>
+
+                <button class="primary-btn"
+                    onclick="document.getElementById('products-section').scrollIntoView({behavior:'smooth'})">
+                    EXPLORE COLLECTION →
+                </button>
+            </div>
+
+            <div class="hero-image">
+                <img
+                    src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200"
+                    alt="Minimal elegant home interior">
+                <div class="hero-image-label">
+                    <span>THE HAVEN EDIT</span>
+                    <strong>Everyday, elevated.</strong>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORY SECTION -->
+
+        <section class="category-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">EXPLORE YOUR INTERESTS</p>
+                    <h2>Shop by category</h2>
+                </div>
+
+                <button class="text-button" onclick="filterCategory('All')">
+                    View everything →
+                </button>
+            </div>
+
+            <div class="category-grid">
+
+                <button class="category-card" onclick="filterCategory('Fashion')">
+                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500" alt="Fashion">
+                    <span>Fashion</span>
+                </button>
+
+                <button class="category-card" onclick="filterCategory('Electronics')">
+                    <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=500" alt="Electronics">
+                    <span>Electronics</span>
+                </button>
+
+                <button class="category-card" onclick="filterCategory('Beauty')">
+                    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=500" alt="Beauty">
+                    <span>Beauty</span>
+                </button>
+
+                <button class="category-card" onclick="filterCategory('Home')">
+                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=500" alt="Home">
+                    <span>Home & Living</span>
+                </button>
+
+                <button class="category-card" onclick="filterCategory('Sports')">
+                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=500" alt="Sports">
+                    <span>Sports</span>
+                </button>
+
+                <button class="category-card" onclick="filterCategory('Books')">
+                    <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=500" alt="Books">
+                    <span>Books</span>
+                </button>
+
+                <button class="category-card" onclick="filterCategory('Accessories')">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=500" alt="Accessories">
+                    <span>Accessories</span>
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- PROMOTION STRIP -->
+
+        <section class="promo-strip">
+            <div>
+                <p class="eyebrow">A LITTLE THANK YOU</p>
+                <h2>Good finds deserve good rewards.</h2>
+                <p>Earn Haven Coins with every order and redeem 1,000 coins for free delivery.</p>
+            </div>
+
+            <button class="secondary-btn" onclick="showPage('rewards')">
+                EXPLORE REWARDS →
+            </button>
+        </section>
+
+
+        <!-- PRODUCTS -->
+
+        <section id="products-section" class="products-section">
+
+            <div class="section-heading products-heading">
+                <div>
+                    <p class="eyebrow">CURATED FOR EVERYDAY</p>
+                    <h2 id="products-title">Discover our products</h2>
+                </div>
+
+                <div class="product-controls">
+                    <div class="search-box">
+                        <span>⌕</span>
+                        <input type="search" id="search-input"
+                            placeholder="Search products...">
+                    </div>
+
+                    <select id="sort-products" aria-label="Sort products">
+                        <option value="default">Sort by</option>
+                        <option value="low">Price: Low to high</option>
+                        <option value="high">Price: High to low</option>
+                        <option value="discount">Biggest discount</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="product-grid" class="product-grid"></div>
+
+            <div id="no-products" class="empty-state hidden">
+                <h2>No products found</h2>
+                <p>Try another search or explore a different category.</p>
+                <button class="secondary-btn" onclick="filterCategory('All')">
+                    VIEW ALL PRODUCTS
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================
+         CART PAGE
+    ====================================== -->
+
+    <section id="cart-page" class="page hidden inner-page">
+
+        <div class="page-heading">
+            <p class="eyebrow">YOUR HAVEN BAG</p>
+            <h1>Shopping bag</h1>
+            <p>All the lovely things you've picked.</p>
+        </div>
+
+        <div id="cart-content"></div>
+
+    </section>
+
+
+    <!-- =====================================
+         WISHLIST PAGE
+    ====================================== -->
+
+    <section id="wishlist-page" class="page hidden inner-page">
+
+        <div class="page-heading">
+            <p class="eyebrow">YOUR SAVED FINDS</p>
+            <h1>Your wishlist</h1>
+            <p>A place for everything you love.</p>
+        </div>
+
+        <div id="wishlist-content" class="product-grid"></div>
+
+    </section>
+
+
+    <!-- =====================================
+         PROFILE PAGE
+    ====================================== -->
+
+    <section id="profile-page" class="page hidden inner-page">
+
+        <div class="page-heading">
+            <p class="eyebrow">YOUR HAVEN ACCOUNT</p>
+            <h1>My profile</h1>
+            <p>Manage your personal shopping space.</p>
+        </div>
+
+        <div class="profile-card">
+
+            <div class="profile-card-top">
+                <div class="profile-avatar">H</div>
+
+                <div>
+                    <p class="eyebrow">WELCOME BACK</p>
+                    <h2 id="profile-display-name">Your name</h2>
+                    <p class="muted">Haven Homes member</p>
+                </div>
+            </div>
+
+            <div id="profile-information" class="profile-information"></div>
+
+            <div class="profile-actions">
+                <button class="primary-btn" onclick="editProfile()">
+                    EDIT NAME
+                </button>
+
+                <button class="secondary-btn" onclick="showPage('addresses')">
+                    MY ADDRESSES
+                </button>
+
+                <button class="secondary-btn" onclick="showPage('orders')">
+                    MY ORDERS
+                </button>
+
+                <button class="secondary-btn" onclick="showPage('rewards')">
+                    MY REWARDS
+                </button>
+            </div>
+
+            <div class="danger-zone">
+                <h3>Delete account</h3>
+                <p>
+                    Remove this demo profile and its saved shopping data
+                    from this browser.
+                </p>
+
+                <button class="delete-account-btn" onclick="deleteAccount()">
+                    DELETE ACCOUNT
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         ADDRESS PAGE
+    ====================================== -->
+
+    <section id="addresses-page" class="page hidden inner-page">
+
+        <div class="page-heading">
+            <p class="eyebrow">DELIVERY DETAILS</p>
+            <h1>My addresses</h1>
+            <p>Save a delivery address for your orders.</p>
+        </div>
+
+        <div class="address-layout">
+
+            <form id="address-form" class="form-card">
+
+                <h2>Add a new address</h2>
+
+                <label for="address-name">Full name</label>
+                <input id="address-name" type="text" required>
+
+                <label for="address-phone">Phone number</label>
+                <input id="address-phone" type="tel"
+                    pattern="[0-9]{10}" maxlength="10" required>
+
+                <label for="address-street">Street address</label>
+                <textarea id="address-street" rows="3" required></textarea>
+
+                <label for="address-city">City</label>
+                <input id="address-city" type="text" required>
+
+                <label for="address-state">State</label>
+                <input id="address-state" type="text" required>
+
+                <label for="address-pin">PIN code</label>
+                <input id="address-pin" type="text"
+                    pattern="[0-9]{6}" maxlength="6" required>
+
+                <button type="submit" class="primary-btn full-btn">
+                    SAVE ADDRESS
+                </button>
+
+            </form>
+
+            <div class="saved-addresses">
+                <h2>Saved addresses</h2>
+                <div id="address-list"></div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         ORDERS PAGE
+    ====================================== -->
+
+    <section id="orders-page" class="page hidden inner-page">
+
+        <div class="page-heading">
+            <p class="eyebrow">YOUR SHOPPING JOURNEY</p>
+            <h1>My orders</h1>
+            <p>Keep track of your purchases.</p>
+        </div>
+
+        <div id="orders-content" class="orders-content"></div>
+
+    </section>
+
+
+    <!-- =====================================
+         REWARDS PAGE
+    ====================================== -->
+
+    <section id="rewards-page" class="page hidden inner-page">
+
+        <div class="page-heading">
+            <p class="eyebrow">A LITTLE SOMETHING EXTRA</p>
+            <h1>Haven Rewards</h1>
+            <p>Shop, earn and enjoy the little rewards.</p>
+        </div>
+
+        <div class="reward-banner">
+            <div class="reward-star">✦</div>
+            <p>YOUR COIN BALANCE</p>
+            <h2><span id="reward-coins">0</span> Coins</h2>
+            <p>Earn 1 coin for every ₹100 spent on an order.</p>
+            <p class="reward-rule">Redeem 1,000 coins for free delivery.</p>
+        </div>
+
+        <div class="reward-history-section">
+            <h2>Rewards activity</h2>
+            <div id="reward-history"></div>
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         PRODUCT DETAILS MODAL
+    ====================================== -->
+
+    <div id="product-modal" class="modal hidden">
+        <div class="modal-backdrop" onclick="closeProduct()"></div>
+
+        <div class="modal-content product-modal-content">
+            <button class="modal-close" onclick="closeProduct()">×</button>
+            <div id="product-modal-body"></div>
+        </div>
+    </div>
+
+
+    <!-- =====================================
+         CHECKOUT MODAL
+    ====================================== -->
+
+    <div id="checkout-modal" class="modal hidden">
+        <div class="modal-backdrop" onclick="closeCheckout()"></div>
+
+        <div class="modal-content checkout-content">
+
+            <button class="modal-close" onclick="closeCheckout()">×</button>
+
+            <p class="eyebrow">ALMOST YOURS</p>
+            <h2>Checkout</h2>
+            <p class="muted">Review your order before placing it.</p>
+
+            <div id="checkout-summary" class="checkout-summary"></div>
+
+            <label for="checkout-address">Delivery address</label>
+            <select id="checkout-address" required></select>
+
+            <label for="payment-method">Payment method</label>
+            <select id="payment-method" required>
+                <option value="UPI">UPI</option>
+                <option value="Credit Card">Credit Card</option>
+                <option value="Debit Card">Debit Card</option>
+                <option value="Net Banking">Net Banking</option>
+                <option value="Wallet">Wallet</option>
+                <option value="Cash on Delivery">Cash on Delivery</option>
+            </select>
+
+            <p class="demo-payment-note">
+                This is a demonstration checkout. No real payment will be processed.
+            </p>
+
+            <button class="primary-btn full-btn" onclick="placeOrder()">
+                PLACE DEMO ORDER →
+            </button>
+
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer class="main-footer">
+
+        <div class="footer-brand">
+            <h2>HAVEN HOMES</h2>
+            <p>A little world of everything.</p>
+        </div>
+
+        <div class="footer-links">
+            <button onclick="filterCategory('All')">Shop</button>
+            <button onclick="showPage('wishlist')">Wishlist</button>
+            <button onclick="showPage('orders')">Orders</button>
+            <button onclick="showPage('rewards')">Rewards</button>
+        </div>
+
+        <p class="footer-copy">
+            © 2026 Haven Homes. Created as a web development demo project.
+        </p>
+
+    </footer>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
